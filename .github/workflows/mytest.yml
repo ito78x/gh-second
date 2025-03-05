@@ -1,0 +1,21 @@
+name: My Test Workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get current hour
+      run: echo "Current Hour: $(date +'%H')"
+
+    - name: List technologies used
+      run: |
+        echo "Technologies used in the project:"
+        echo "- Technology 1"
+        echo "- Technology 2"
+        echo "- Technology 3"
